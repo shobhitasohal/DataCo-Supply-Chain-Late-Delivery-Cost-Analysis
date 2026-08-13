@@ -172,7 +172,7 @@ The cleaned CSV was imported directly into Power BI. DAX measures were built for
 
 **Executive Summary — On-time Delivery Goals (by Region)**
 
-![Executive Summary Dashboard](dashboard/dashboard_screenshot.png)
+![Executive Summary Dashboard](SupplyChain_dashboard.png
 
 ---
 
