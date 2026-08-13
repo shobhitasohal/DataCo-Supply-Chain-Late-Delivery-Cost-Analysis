@@ -21,7 +21,7 @@ End-to-end solo project covering data cleaning, exploratory data analysis in Pyt
 
 Before any region could be recommended, two underlying questions needed answers:
 
-1. **Cost basis** — What's the right dollar metric for "costing the business" — profit, or sales?
+1. **Cost basis** — What's the right dollar metric for "costing the business" i.e. profit, or sales?
 2. **Prioritization signal** — Is late delivery *rate* a reliable way to rank regions, or does it need to be paired with dollar impact?
 
 ---
@@ -190,20 +190,20 @@ The cleaned CSV was imported directly into Power BI. DAX measures were built for
 
 ### Market Overview
 - Dataset covers **180,519 order line items** across **65,752 distinct orders** and **23 regions**
-- **54.8% of all orders are late-delivered** — the baseline rate across the entire dataset, and the figure against which every region is compared
+- **54.8% of all orders are late-delivered** — The baseline rate across the entire dataset, and the figure against which every region is compared
 
 ---
 
 ### 1. Where is late delivery volume concentrated?
-- **Western Europe and Central America have by far the highest late-delivery order volume** — roughly double the next closest region (South America), and more than 10× the smallest regions (Canada, Central Asia)
-- Order volume by region closely tracks overall market size — the regions with the most late deliveries are simply the regions with the most orders overall
+- **Western Europe and Central America have by far the highest late-delivery order volume** Roughly double the next closest region (South America), and more than 10× the smallest regions (Canada, Central Asia)
+- Order volume by region closely tracks overall market size — The regions with the most late deliveries are simply the regions with the most orders overall
 
 ---
 
 ### 2. Rate vs. dollar impact — the central insight
-- **Late delivery rate barely varies by region** — the spread across all 23 regions is roughly 8 percentage points at most, and under 1.5 points across the 5 broader markets
-- **Dollar impact varies far more, and is driven by order volume, not delivery performance** — Western Europe ($3.3M at risk) and Central America ($3.1M) top the ranking not because their delivery process is worse, but because they're DataCo's largest markets, so even an average rate produces the largest revenue exposure
-- **High-rate regions can still be low-priority in dollar terms** — several African regions post some of the highest late-delivery rates in the dataset but carry minimal dollar exposure due to low order volume, confirming that rate and cost point to different regions and answer different questions
+- **Late delivery rate barely varies by region** — The spread across all 23 regions is roughly 8 percentage points at most, and under 1.5 points across the 5 broader markets
+- **Dollar impact varies far more, and is driven by order volume, not delivery performance** Western Europe ($3.3M at risk) and Central America ($3.1M) top the ranking not because their delivery process is worse, but because they're DataCo's largest markets, so even an average rate produces the largest revenue exposure
+- **High-rate regions can still be low-priority in dollar terms** — Several African regions post some of the highest late-delivery rates in the dataset but carry minimal dollar exposure due to low order volume, confirming that rate and cost point to different regions and answer different questions
 
 ---
 
@@ -221,8 +221,8 @@ The cleaned CSV was imported directly into Power BI. DAX measures were built for
 ## Data Notes
 
 - **`Order Status`** has no official business-meaning documentation from the data source; values were interpreted using standard e-commerce order-lifecycle conventions, not a confirmed definition
-- **`Order Item Profit Ratio`** and **`Order Profit Per Order`** were excluded after investigation showed their negative values could not be explained by any other field in the dataset — Sales was used as the dollar cost basis instead
-- **Sales at Risk** (as calculated on the dashboard) sums Sales across all late-delivered orders regardless of Order Status — it is not filtered to fulfilled/completed orders only, and this scope is intentional for simplicity at the executive-summary level
+- **`Order Item Profit Ratio`** and **`Order Profit Per Order`** were excluded after investigation showed their negative values could not be explained by any other field in the dataset instead Sales was used as the dollar cost basis
+- **Sales at Risk** (as calculated on the dashboard) sums Sales across all late-delivered orders regardless of Order Status for late deliveries. It is not filtered to fulfilled/completed orders only, and this scope is intentional to ensure executive-summary level answers the business problem.
 
 ---
 
